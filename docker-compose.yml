@@ -60,7 +60,20 @@ services:
       ports:
           - 6379:6379
 
-  
+  # Queue Server
+  queue: 
+     build: 
+         context: .
+         target: php
+         args: 
+             - APP_ENV=${APP_ENV}
+     environment:
+          - APP_ENV=${APP_ENV}
+          - CONTAINER_ROLE=queue
+     working_dir: /var/www/html
+     volumes:
+         - ./:/var/www/html           
+            
   # Node Server
   node:
       build:

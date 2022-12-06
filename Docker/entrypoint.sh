@@ -26,6 +26,7 @@ elif [ "$role" = "queue" ]; then
     php /var/www/html/artisan queue:work --verbose --tries=3 --timeout=180
 elif [ "$role" = "websocket"  ]; then
     echo "Running the websocket server ... "
+    php artisan websocket:serve
 fi
 
 

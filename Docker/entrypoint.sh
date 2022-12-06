@@ -24,9 +24,8 @@ if [ "$role" = "app" ]; then
 elif [ "$role" = "queue" ]; then
     echo "Running the queue ...  "
     php /var/www/html/artisan queue:work --verbose --tries=3 --timeout=180
-
 elif [ "$role" = "websocket"  ]; then
-     echo "Running the websocket server ... "
+    echo "Running the websocket server ... "
 fi
 
 
